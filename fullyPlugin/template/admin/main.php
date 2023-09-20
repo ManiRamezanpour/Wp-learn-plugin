@@ -3,11 +3,9 @@
     <form action="" method="post">
         <label for="pluginActicate">Active plugin</label>
             <input type="checkbox" name="pluginActivate"
-                <?php echo $currentOption ? "checked":"" ?>
-            >
-
+            <?php isset($current_plugin_status) && intval($current_plugin_status) > 0 ? "checked" : "";?> />
         <div>
-            <button class="button button-primary" name="" type="submit">Save</button>
+            <button class="button button-primary" name="saveSetting" type="submit">Save</button>
         </div>
 
     </form>

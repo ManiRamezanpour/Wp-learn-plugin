@@ -9,11 +9,14 @@ add_action('admin_menu','add_admin_menus');
 function wp_api_admins_callback(){
 
     // check if plugin activation is true checkbox was checked
-    if(isset($_POST['pluginActivate'])) {
-        $value = isset($_POST['pluginActivate']) ? true : false;
-        add_option('plugins_Activation',$value);
+    if(isset($_POST['saveSetting'])) {
+        $is_plugin_active = $_POST['pluginActivate'] ? 1 : 0;
+        var_dump($is_plugin_active);
+//       add_option('plugins_Activation',is); // add option
+        update_option('plugins_Activation',$is_plugin_active); // if not created creat it
     }
-    $currentOption = get_option('plugins_Activation');
+    $current_plugin_status = get_option('plugins_Activation');
+
     include PLUGIN_TMP . '/admin/main.php';
 }
 function wp_api_generall_page(){
