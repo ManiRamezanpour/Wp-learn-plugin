@@ -20,3 +20,4 @@ function wp_api_admins_callback (){
 function wp_apis_general_page(){
     echo "test";
 }
+    
