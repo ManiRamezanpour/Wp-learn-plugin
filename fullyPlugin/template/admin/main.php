@@ -7,6 +7,5 @@
         <div>
             <button class="button button-primary" name="saveSetting" type="submit">Save</button>
         </div>
-
     </form>
 </div>
